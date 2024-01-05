@@ -9,13 +9,13 @@ module purge
 module load BWA/0.7.17-intel-2019b
 
 genomes=(
-  "SRR6251367"
+  "SRR7062760"
 )
 
 mkdir -p data/raw_map
 for genome in "${genomes[@]}"
 do
-  bwa mem -@ 96 \
+  bwa mem -t 96 \
         "data/NC_040889.2-2300000-2400000.fasta" \
         "/tarafs/data/home/hrasoara/proj5034-AGBKU/Download_BettaFish/trimmed/${genome}_1_pairend_trimmed.fq" \
         "/tarafs/data/home/hrasoara/proj5034-AGBKU/Download_BettaFish/trimmed/${genome}_2_pairend_trimmed.fq" \
