@@ -8,4 +8,7 @@
 module load Singularity/3.3.0
 
 cd data
-singularity exec --bind ${PWD}:/data/ shub://repeatexplorer/repex_tarean analyze -v -p /data/re_output "NC_040889.2-2300000-2400000.fasta"
+singularity exec shub://repeatexplorer/repex_tarean seqclust \
+    -p -t -c 64 -v "data/repex-output" \
+    "NC_040889.2-2300000-2400000.fasta"
+echo "Done"
