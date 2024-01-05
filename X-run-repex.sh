@@ -9,6 +9,6 @@ module load Singularity/3.3.0
 
 cd data
 singularity exec shub://repeatexplorer/repex_tarean seqclust \
-    -p -t -c 64 -v "data/repex-output" \
+    -p -t -c 64 -v "repex-output" \
     "NC_040889.2-2300000-2400000.fasta"
 echo "Done"
